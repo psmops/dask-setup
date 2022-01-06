@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dask-worker
+  namespace: psmops-dask-production
+  labels:
+    app: dask-worker
+    environment: production
+    context: dask
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: dask-worker
+  template:
+    metadata:
+      labels:
+        app: dask-worker
+    spec:
+      containers:
+        - name: dask-worker
+          image: daskdev/dask
+          args:
+            [
+              dask-worker,
+              dask-scheduler:8786,
+            ]
+
