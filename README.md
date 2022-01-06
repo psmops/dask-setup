@@ -9,6 +9,7 @@ Dask is here: https://dask.org/
 Kubernetes (more preciselyy microk8s) has been deployed on some nodes in the cluster.
 
 For reference, microk8s current setup (I doubt all those are necessary though):
+```
   enabled:
     dashboard            # The Kubernetes dashboard
     dns                  # CoreDNS
@@ -21,6 +22,7 @@ For reference, microk8s current setup (I doubt all those are necessary though):
     rbac                 # Role-Based Access Control for authorisation
     registry             # Private image registry exposed on localhost:32000
     storage              # Storage class; allocates storage from host directory
+```
 
 Despite my efforts (I didn't insist much though), I haven't been able
 to set a dask cluster with helm, helm2 or helm3. Not sure why.
